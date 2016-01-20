@@ -13,10 +13,10 @@
 }*/
 
 var $ = function(){
-	return new base();
+	return new Base();
 }
 
-function base(){
+function Base(){
 	this.elements = [];
 	
 	this.getId = function(id){
@@ -42,7 +42,7 @@ function base(){
 }
 
 //设置css样式
-base.prototype.css = function(attr,val){
+Base.prototype.css = function(attr,val){
 	for(var i = 0; i < this.elements.length; i++){
 		this.elements[i].style[attr] = val;
 	}
@@ -50,7 +50,7 @@ base.prototype.css = function(attr,val){
 }
 
 //设置html
-base.prototype.html = function(str){
+Base.prototype.html = function(str){
 	for(var i = 0; i < this.elements.length; i++){
 		this.elements[i].innerHTML = str;
 	}
@@ -58,7 +58,7 @@ base.prototype.html = function(str){
 }
 
 //设置onclick点击事件
-base.prototype.click = function(fn){
+Base.prototype.click = function(fn){
 	for(var i = 0; i < this.elements.length; i++){
 		this.elements[i].onclick = fn;
 	}
@@ -66,7 +66,7 @@ base.prototype.click = function(fn){
 }
 
 //获取某一个节点
-base.prototype.eq = function(num){
+Base.prototype.eq = function(num){
 	var el = this.elements[num];
 	this.elements = [];
 	this.elements[0] = el;
